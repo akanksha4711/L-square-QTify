@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+    background-color: #34C94B;
+    padding: 0 32px;
+}
+.navbar img {
+    width: 67px;
+    height: 34px;
+}
+
+.css-y7biwh {
+    width: 568px;
+    height: 48px;
+}
+
+.navbar Button {
+    width: 170px;
+    height: 47px;
+}
+
+.MuiIconButton-root {
+    width: 66px;
+}
