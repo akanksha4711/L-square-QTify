@@ -5,14 +5,15 @@
     align-items: center;
     height: 74px;
     background-color: #34C94B;
-    padding: 0 32px;
+    padding: 0;
 }
 .navbar img {
     width: 67px;
     height: 34px;
+    margin-left: 32px;
 }
 
-.css-y7biwh {
+.css-q1t27n {
     width: 568px;
     height: 48px;
 }
@@ -20,6 +21,8 @@
 .navbar Button {
     width: 170px;
     height: 47px;
+    font-family: Poppins;
+    margin-right: 32px;
 }
 
 .MuiIconButton-root {
