@@ -6,13 +6,11 @@
     text-align: center;
     height: 74px;
     background-color: #34C94B;
-    padding: 0;
+    padding: 0 32px;
 }
 .navbar img {
     width: 67px;
-    height: 34px;
-    padding-left: 32px;
-    padding-top: 20px;
+    height: 54px;
 }
 
 .css-q1t27n {
@@ -24,7 +22,6 @@
     width: 170px;
     height: 47px;
     font-family: Poppins;
-    margin-right: 32px;
 }
 
 .MuiIconButton-root {
