@@ -7,7 +7,7 @@ import "./Section.css";
 
 
 export default function Section ({songs, name}) {
-    const [showAll, setShowAll] = useState(true);
+    const [showAll, setShowAll] = useState(false);
     const theme = useTheme();
 
     const header = () => {
