@@ -17,11 +17,25 @@ const fetchTopAlbums = async (setTopAlbums) => {
     }
 }
 
+const fetchNewAlbums = async (setNewAlbums) => {
+    try{
+        const res = await fetch("https://qtify-backend-labs.crio.do/albums/new");
+        const data = await res.json();
+        setNewAlbums(data);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
 function Home() {
     const [topAlbums, setTopAlbums] = useState([]);
+    const [newAlbums, setNewAlbums] = useState([]);
 
     useEffect(() => {
         fetchTopAlbums(setTopAlbums);
+        fetchNewAlbums(setNewAlbums);
     }, [])
 
     return (
@@ -29,6 +43,7 @@ function Home() {
         <Navbar/>
         <Hero/>
         <Section name="top-albums" songs={topAlbums}/>
+        <Section name="new-albums" songs={newAlbums}/>
       </div>
     );
   }

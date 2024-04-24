@@ -16,6 +16,7 @@ export default function Section ({songs, name}) {
             <span onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main}} className="showall-btn">{showAll? "Collapse" : "Show All"}</span>
         </div>
     }
+    
     if(showAll){
         return (
             <div className="Section">
