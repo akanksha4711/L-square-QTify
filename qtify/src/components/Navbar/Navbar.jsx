@@ -77,7 +77,7 @@ export default function Navbar (){
                             <SearchIcon />
                         </IconButton>
                     </Search>
-                    <Button sx={{"background-color": theme.palette.secondary.main}}>Give Feedback</Button>
+                    <Button sx={{"backgroundColor": theme.palette.secondary.main}}>Give Feedback</Button>
                 </Toolbar>
             </AppBar>
         </Box>

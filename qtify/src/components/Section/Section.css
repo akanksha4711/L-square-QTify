@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 14.29% [col-start]);
+    grid-template-rows: repeat(3, 252px [row-start]);
+    margin-left: 40px;
+    margin-right: 0px;
+}
+
+.header {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.showall-btn{
+    cursor: pointer;
+}
