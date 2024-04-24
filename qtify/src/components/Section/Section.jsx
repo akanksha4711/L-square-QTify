@@ -7,7 +7,7 @@ import "./Section.css";
 
 
 export default function Section ({songs, name}) {
-    const [showAll, setShowAll] = useState(false);
+    const [showAll, setShowAll] = useState(true);
     const theme = useTheme();
 
     const header = () => {
@@ -16,7 +16,7 @@ export default function Section ({songs, name}) {
             <span onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main}} className="showall-btn">{showAll? "Collapse" : "Show All"}</span>
         </div>
     }
-    
+
     if(showAll){
         return (
             <div className="Section">
