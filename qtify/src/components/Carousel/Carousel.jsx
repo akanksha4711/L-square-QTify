@@ -16,16 +16,14 @@ export default function Carousel ({data}) {
     return (
         <div className="carousel">
             <BsArrowLeftCircleFill onClick={prevSlide} className={slide === 0 ? "arrow-hide arrow arrow-left" : "arrow arrow-left"} />
-            {/* <img src={require("../../assets/LeftArrow.svg")} onClick={prevSlide} alt="left arrow" className="arrow arrow-left"/> */}
             <div className="container">
                 {data.map((item, idx) => {
                     if(slide === Math.floor(idx/7)){
                         return <Card img={item.image} name={item.title} follows={item.follows} className={slide === Math.floor(idx/7) ? "slide" : "slide slide-hidden"} key={idx}/>
-                    }
+                    } else return <div style={{"display":"none"}}></div>
                 })}
             </div>
             <BsArrowRightCircleFill onClick={nextSlide} className={slide === Math.floor((data.length-1)/7) ? "arrow-hide arrow arrow-right" : "arrow arrow-right"}/>
-            {/* <img src={require("../../assets/RightArrow.svg")} onClick={nextSlide} alt="right arrow" className="arrow arrow-right"/> */}
         </div>
     )
 }
