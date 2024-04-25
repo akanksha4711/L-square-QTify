@@ -14,16 +14,17 @@ export default function Carousel ({data, likes}) {
         console.log(slide);
     }
     useEffect(() => {
-        setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
-    }, [])
-    // useEffect(() => {
-    //     for(let i=0; i<Math.floor((data.length-1)/7); i++){
-    //         setTimeout(() => {
-    //             console.log(i, slide);
-    //             setSlide(i+1)
-    //         },1000*(i+1))
-    //     }
-    // }, [])
+        if(likes){
+            for(let i=0; i<Math.floor((data.length-1)/7); i++){
+                setTimeout(() => {
+                    console.log(i, slide);
+                    setSlide(i+1)
+                },1000*(i+1))
+            }
+        }
+        else setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
+    }, []);
+
     return (
         <div className="carousel">
             <BsArrowLeftCircleFill onClick={prevSlide} className={slide === 0 ? "arrow-hide arrow arrow-left" : "arrow arrow-left"} />
