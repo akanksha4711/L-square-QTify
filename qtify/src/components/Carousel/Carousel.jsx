@@ -14,7 +14,12 @@ export default function Carousel ({data, likes}) {
         console.log(slide);
     }
     useEffect(() => {
-        setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
+        for(let i=0; i<Math.floor((data.length-1)/7); i++){
+            setTimeout(() => {
+                console.log(i, slide);
+                setSlide(i+1)
+            },3000*(i+1))
+        }
     }, [])
     return (
         <div className="carousel">

@@ -52,7 +52,7 @@ function BasicTabs({songs, genre}) {
   
     return (
       <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box className="all-tabs" sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
             {/* <Tab label="Item One" {...a11yProps(0)} className="tab"/>
             <Tab label="Item Two" {...a11yProps(1)} className="tab"/>
@@ -70,11 +70,11 @@ function BasicTabs({songs, genre}) {
         <CustomTabPanel value={value} index={2}>
           Item Three
         </CustomTabPanel> */}
-        <CustomTabPanel value={value} index={0} className="tab">
+        <CustomTabPanel value={value} index={0} className="tab-body">
             <Carousel data={songs} likes={true}/>
         </CustomTabPanel>
         {genre.data.map((item,idx) => {
-            return <CustomTabPanel value={value} index={1+idx} className="tab" key={idx}>
+            return <CustomTabPanel value={value} index={1+idx} className="tab-body" key={idx}>
                 <Carousel data={songs.filter((song) => song.genre.key === item.key)} key={idx} likes={true}/>
             </CustomTabPanel>
         })}
