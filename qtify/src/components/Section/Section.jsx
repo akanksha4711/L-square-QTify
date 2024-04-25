@@ -12,7 +12,7 @@ export default function Section ({songs, name}) {
     const header = () => {
         return <div className="header">
             <span>{name === "top-albums" ? "Top Albums": "New Albums"}</span>
-            <Button onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main, "backgroundColor": theme.palette.secondary.main}} className="showall-btn">{showAll? "Collapse" : "Show All"}</Button>
+            <Button onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main, "backgroundColor": theme.palette.secondary.main}} className="showall-btn">{!showAll? "Collapse" : "Show All"}</Button>
         </div>
     }
 
