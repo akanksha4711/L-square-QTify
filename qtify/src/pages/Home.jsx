@@ -29,13 +29,43 @@ const fetchNewAlbums = async (setNewAlbums) => {
     }
 }
 
+const fetchSongs = async (setSongs) => {
+    try{
+        const res = await fetch("https://qtify-backend-labs.crio.do/songs");
+        const data = await res.json();
+        console.log(data);
+        setSongs(data);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
+const fetchGenre = async (setGenre) => {
+    try{
+        const res = await fetch("https://qtify-backend-labs.crio.do/genres");
+        const data = await res.json();
+        console.log(data);
+        setGenre(data);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
 function Home() {
     const [topAlbums, setTopAlbums] = useState([]);
     const [newAlbums, setNewAlbums] = useState([]);
+    const [songs, setSongs] = useState([]);
+    const [genre, setGenre] = useState([]);
 
     useEffect(() => {
         fetchTopAlbums(setTopAlbums);
         fetchNewAlbums(setNewAlbums);
+        fetchSongs(setSongs);
+        fetchGenre(setGenre);
     }, [])
 
     return (
@@ -44,6 +74,7 @@ function Home() {
         <Hero/>
         <Section name="top-albums" songs={topAlbums}/>
         <Section name="new-albums" songs={newAlbums}/>
+        <Section name="songs" songs={songs} genre={genre}/>
       </div>
     );
   }

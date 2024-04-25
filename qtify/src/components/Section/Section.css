@@ -29,3 +29,16 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.songs{
+    margin-left: 32px;
+}
+.songs-heading {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Poppins;
+}
+.tab {
+    color: #ffffff;
+}
