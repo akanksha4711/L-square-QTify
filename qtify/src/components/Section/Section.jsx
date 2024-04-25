@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { Button } from "@mui/material";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import { useTheme } from "@emotion/react";
 import "./Section.css";
-
-
 
 export default function Section ({songs, name}) {
     const [showAll, setShowAll] = useState(true);
@@ -13,7 +12,7 @@ export default function Section ({songs, name}) {
     const header = () => {
         return <div className="header">
             <span>{name === "top-albums" ? "Top Albums": "New Albums"}</span>
-            <span onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main}} className="showall-btn">{showAll? "Collapse" : "Show All"}</span>
+            <Button onClick={() => setShowAll(!showAll)} style={{"color": theme.palette.primary.main, "backgroundColor": theme.palette.secondary.main}} className="showall-btn">{showAll? "Collapse" : "Show All"}</Button>
         </div>
     }
 
