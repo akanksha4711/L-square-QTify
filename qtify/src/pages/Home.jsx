@@ -3,7 +3,7 @@ import Hero from "../components/Hero/Hero";
 import Section from "../components/Section/Section";
 import { useState, useEffect } from "react";
 // import top_albums from "../data/top_albums.json";
-import songsJson from "../data/songs.json";
+// import songsJson from "../data/songs.json";
 import "./Home.css"
 
 const fetchTopAlbums = async (setTopAlbums) => {
@@ -75,7 +75,7 @@ function Home() {
         <Hero/>
         <Section name="top-albums" songs={topAlbums}/>
         <Section name="new-albums" songs={newAlbums}/>
-        <Section name="songs" songs={songsJson} genre={genre}/>
+        <Section name="songs" songs={songs} genre={genre}/>
       </div>
     );
   }
