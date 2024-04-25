@@ -15,7 +15,7 @@ export default function Carousel ({data}) {
     }
     useEffect(() => {
         setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
-    }, [slide])
+    }, [])
     return (
         <div className="carousel">
             <BsArrowLeftCircleFill onClick={prevSlide} className={slide === 0 ? "arrow-hide arrow arrow-left" : "arrow arrow-left"} />
