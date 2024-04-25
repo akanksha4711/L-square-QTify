@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
-import Card from "../components/Card/Card";
 import Section from "../components/Section/Section";
 import { useState, useEffect } from "react";
+// import top_albums from "../data/top_albums.json"
 import "./Home.css"
 
 const fetchTopAlbums = async (setTopAlbums) => {

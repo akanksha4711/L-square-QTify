@@ -1,5 +1,5 @@
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Card from "../Card/Card"
 import "./Carousel.css"
 
@@ -13,6 +13,9 @@ export default function Carousel ({data}) {
         setSlide(slide === 0 ? Math.floor((data.length-1)/7) : slide - 1);
         console.log(slide);
     }
+    useEffect(() => {
+        setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
+    }, [slide])
     return (
         <div className="carousel">
             <BsArrowLeftCircleFill onClick={prevSlide} className={slide === 0 ? "arrow-hide arrow arrow-left" : "arrow arrow-left"} />
