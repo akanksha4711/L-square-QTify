@@ -16,13 +16,21 @@ export default function Carousel ({data, likes}) {
     useEffect(() => {
         setTimeout(() => setSlide(slide === Math.floor((data.length-1)/7) ? 0: slide + 1),3000)
     }, [])
+    // useEffect(() => {
+    //     for(let i=0; i<Math.floor((data.length-1)/7); i++){
+    //         setTimeout(() => {
+    //             console.log(i, slide);
+    //             setSlide(i+1)
+    //         },1000*(i+1))
+    //     }
+    // }, [])
     return (
         <div className="carousel">
             <BsArrowLeftCircleFill onClick={prevSlide} className={slide === 0 ? "arrow-hide arrow arrow-left" : "arrow arrow-left"} />
             <div className="container">
                 {data.map((item, idx) => {
                     if(slide === Math.floor(idx/7)){
-                        return <Card img={item.image} name={item.title} follows={likes ? item.likes : item.follows} className={slide === Math.floor(idx/7) ? "slide" : "slide slide-hidden"} key={idx} likes={likes}/>
+                        return <Card img={item.image} name={item.title} follows={likes ? item.likes : item.follows} className={slide === Math.floor(idx/7) ? "slide" : "slide slide-hidden"} key={idx} likes={likes} number={likes? false : item.songs.length}/>
                     } else return <div style={{"display":"none"}}></div>
                 })}
             </div>
