@@ -30,7 +30,7 @@ export default function Carousel ({data, likes}) {
             <div className="container">
                 {data.map((item, idx) => {
                     if(slide === Math.floor(idx/7)){
-                        return <Card img={item.image} name={item.title} follows={likes ? item.likes : item.follows} className={slide === Math.floor(idx/7) ? "slide" : "slide slide-hidden"} key={idx} likes={likes} number={likes? false : item.songs.length}/>
+                        return <Card img={item.image} name={item.title} follows={likes ? item.likes : item.follows} className={slide === Math.floor(idx/7) ? "slide" : "slide slide-hidden"} key={idx} likes={likes} number={item.songs? item.songs.length : false}/>
                     } else return <div style={{"display":"none"}}></div>
                 })}
             </div>
