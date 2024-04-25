@@ -106,7 +106,7 @@ export default function Section ({songs, name, genre=[]}) {
                 {header()}
                 <div className="container">
                     {songs.map((song, idx) => {
-                        return <Card img={song.image} name={song.title} follows={song.follows} className="item" key={idx} number={song.songs.length}/>
+                        return <Card img={song.image} name={song.title} follows={song.follows} className="item" key={idx} number={song.songs ? song.songs.length : false}/>
                     })}
                 </div>
             </div>
