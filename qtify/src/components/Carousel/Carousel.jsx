@@ -18,7 +18,7 @@ export default function Carousel ({data, likes}) {
             setTimeout(() => {
                 console.log(i, slide);
                 setSlide(i+1)
-            },3000*(i+1))
+            },1000*(i+1))
         }
     }, [])
     return (
