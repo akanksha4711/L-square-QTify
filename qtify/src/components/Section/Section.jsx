@@ -58,8 +58,8 @@ function BasicTabs({songs, genre}) {
             <Tab label="Item Two" {...a11yProps(1)} className="tab"/>
             <Tab label="Item Three" {...a11yProps(2)} className="tab"/> */}
             <Tab label="All" {...a11yProps(0)} className="tab"/>
-            {genre.data.map((item, idx) => <Tab label={item.label} {...a11yProps(1+idx)} className="tab" key={idx}/>)}
-          </Tabs>
+                {genre.data.map((item, idx) => <Tab label={item.label} {...a11yProps(1+idx)} className="tab" key={idx}/>)}
+            </Tabs>
         </Box>
         {/* <CustomTabPanel value={value} index={0}>
           Item One
@@ -82,7 +82,7 @@ function BasicTabs({songs, genre}) {
     );
 }
 
-export default function Section ({songs, name, genre}) {
+export default function Section ({songs, name, genre=[]}) {
     const [showAll, setShowAll] = useState(true);
     const theme = useTheme();
 
@@ -93,7 +93,7 @@ export default function Section ({songs, name, genre}) {
         </div>
     }
 
-    if(genre){
+    if(genre.length !== 0){
         return <div className="songs">
             <div className="songs-heading">Songs</div>
             <BasicTabs songs={songs} genre={genre}/>
