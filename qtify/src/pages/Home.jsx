@@ -71,7 +71,7 @@ function Home() {
 
     return (
       <div className="Home">
-        <Navbar/>
+        <Navbar data={[...topAlbums.map(item => item.title), ...newAlbums.map(item => item.title), ...songs.map(item => item.title)]}/>
         <Hero/>
         <Section name="top-albums" songs={topAlbums}/>
         <Section name="new-albums" songs={newAlbums}/>
